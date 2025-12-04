@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^9.0.0"
+  },
+  "name": "course-master-backend",
+  "version": "1.0.0",
+  "description": "backend/\r │\r ├── package.json\r ├── .env                # Environment variables (MONGO_URI, JWT_SECRET, PORT, etc.)\r ├── server.js           # Entry point of the backend\r │\r ├── src/\r │   ├── config/\r │   │   └── db.js       # MongoDB connection setup\r │   │\r │   ├── controllers/    # Logic for handling requests\r │   │   ├── authController.js\r │   │   ├── courseController.js\r │   │   ├── enrollmentController.js\r │   │   ├── assignmentController.js\r │   │   └── quizController.js\r │   │\r │   ├── routes/         # Express routes\r │   │   ├── authRoutes.js\r │   │   ├── courseRoutes.js\r │   │   ├── enrollmentRoutes.js\r │   │   ├── assignmentRoutes.js\r │   │   └── quizRoutes.js\r │   │\r │   ├── models/         # Mongoose schemas\r │   │   ├── User.js\r │   │   ├── Course.js\r │   │   ├── Enrollment.js\r │   │   ├── Assignment.js\r │   │   └── Quiz.js\r │   │\r │   ├── middleware/     # Express middleware\r │   │   ├── authMiddleware.js   # JWT auth & role check\r │   │   └── errorMiddleware.js  # Global error handling\r │   │\r │   ├── utils/          # Helper functions\r │   │   └── generateToken.js    # JWT generation\r │   │\r │   └── services/       # Optional: Business logic separated from controllers\r │       └── courseService.js\r │\r └── .gitignore",
+  "main": "server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
