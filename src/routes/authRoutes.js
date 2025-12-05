@@ -1,12 +1,16 @@
 const express = require("express");
 const router = express.Router();
+
 const {
   registerUser,
   loginUser,
   getCurrentUser,
 } = require("../controllers/authController");
-
-const authMiddleware = require("../middleware/authMiddleware");
+const {
+  verifyToken,
+  isAdmin,
+  isStudent,
+} = require("../middleware/authMiddleware");
 
 // Register
 router.post("/register", registerUser);
@@ -21,6 +25,6 @@ router.post("/logout", (req, res) => {
 });
 
 // Current user
-router.get("/me", authMiddleware, getCurrentUser);
+router.get("/me", verifyToken, getCurrentUser);
 
 module.exports = router;
